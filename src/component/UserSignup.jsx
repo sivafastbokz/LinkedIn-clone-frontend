@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FormApi from '../service/formApi';
 import Logo from '../reUseComponent/Logo';
 import ButtonReUse from '../reUseComponent/ButtonReUse';
+import TagReUse from '../reUseComponent/TagReUse';
 import './userSignup.css'
 
 function UserSignup(){
@@ -26,7 +27,7 @@ function UserSignup(){
         <Logo/>
         </div>
         <div className='heading'>
-            <h1>Make the most of your professional life</h1>
+            <TagReUse label='Make the most of your professional life'/>
         </div>
         <div className='container'>
             <div className='container-item'>
