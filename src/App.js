@@ -1,11 +1,11 @@
 import React from 'react';
-import SignUpForm from './container/SignUpForm';
+import RouteWay from './routers/route';
 
 
 function App() {
   return (
   <>
-   <SignUpForm/>
+   <RouteWay/>
   </>
   );
 }

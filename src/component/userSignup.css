@@ -24,7 +24,7 @@ body{
     justify-content: center;
     position: relative;
     top: 30px;
-    left: 600px;
+    left: 550px;
     border-radius: 5px;
 }
 
@@ -33,7 +33,7 @@ body{
 }
 
 .input-box{
-    padding: 4px;
+    padding: 5px;
     width: 250px;
     border-radius: 3px;
     border: 1px solid black;
@@ -68,4 +68,77 @@ body{
 
 .already a{
     text-decoration: none;
+}
+
+.error-msg{
+    color: red;
+    margin-left: 40px;
+}
+
+.error-msg-email{
+    color: red;
+    margin-left: 50px;
+}
+
+@media only screen and (max-device-width : 425px){
+    .heading h1{
+        display: inline;
+        position: relative;
+        left: 50px;
+        font-size:large;
+    }
+
+    .container{
+        position: relative;
+        top: 30px;
+        left: 60px;
+    }
+
+    .logo{
+        position: relative;
+        top: 0px;
+        left: 0;
+    }
+}
+
+@media only screen and (max-device-width : 320px){
+    .heading h1{
+        display: inline;
+        position: relative;
+        left: 2px;
+        font-size:large;
+    }
+
+    .container{
+        position: relative;
+        top: 30px;
+        left: 10px;
+    }
+
+    .logo{
+        position: relative;
+        top: 0px;
+        left: 20px;
+    }
+}
+
+@media only screen and (max-device-width : 375px){
+    .heading h1{
+        display: inline;
+        position: relative;
+        left: 20px;
+        font-size:large;
+    }
+
+    .container{
+        position: relative;
+        top: 30px;
+        left: 30px;
+    }
+
+    .logo{
+        position: relative;
+        top: 0px;
+        left: 0;
+    }
 }

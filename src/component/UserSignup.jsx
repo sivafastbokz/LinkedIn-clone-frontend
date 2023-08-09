@@ -3,6 +3,7 @@ import FormApi from '../service/formApi';
 import Logo from '../reUseComponent/Logo';
 import ButtonReUse from '../reUseComponent/ButtonReUse';
 import TagReUse from '../reUseComponent/TagReUse';
+import { useNavigate } from 'react-router-dom';
 import './userSignup.css'
 
 function UserSignup(){
@@ -10,12 +11,25 @@ function UserSignup(){
     const[firstName,setFirstName]=useState('');
     const[lastName,setLastName]=useState('');
     const[password,setPassword]=useState('');
+    const[error,setError]=useState('');
+    const[emailError,setEmailError]=useState('');
+
+    const navigate = useNavigate();
 
     const Register = async(e)=>{
         e.preventDefault();
+        if(!email || !firstName || !lastName || !password){
+            setError('Fill The Required Fields')
+            return;
+        }
+        if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)){
+            setEmailError('Enter a valid email');
+            return;
+        }
         try {
             const response = await FormApi(email,firstName,lastName,password);
             console.log(response)
+            navigate('/signinpage')
         } catch (error) {
             console.log(error)
         }
@@ -35,6 +49,7 @@ function UserSignup(){
                <br/>
                <input type='email' className='input-box' onChange={(event)=>setEmail(event.target.value)}></input>
                <br/>
+               {emailError && <p className='error-msg-email'>{emailError}</p>}
                <label>FirstName</label>
                <br/>
                <input type='text' className='input-box' onChange={(evevt)=>setFirstName(evevt.target.value)}></input>
@@ -46,9 +61,10 @@ function UserSignup(){
                <label>Password</label>
                <br/>
                <input type='password'className='input-box' onChange={(evevt)=>setPassword(evevt.target.value)}></input>
+               {error &&<p className='error-msg'>{error}</p>}
                <ButtonReUse label='Register' className='register-btn'  onClick={Register}/>
                <hr className='line'/>
-               <label className='already'>Already on LinkedIn?<a href='Signin' >Sign in</a></label>
+               <label className='already'>Already on LinkedIn?<a href='signinpage'onClick={()=>navigate('/signinpage')} >Sign in</a></label>
             </div>
         </div>
         </>
