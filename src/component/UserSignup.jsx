@@ -35,6 +35,11 @@ function UserSignup(){
         }
     }
 
+    const SignInPage = (event)=>{
+      event.preventDefault();
+      navigate('/signinpage')
+    } 
+
     return(
         <>
         <div className='logo'>
@@ -64,7 +69,7 @@ function UserSignup(){
                {error &&<p className='error-msg'>{error}</p>}
                <ButtonReUse label='Register' className='register-btn'  onClick={Register}/>
                <hr className='line'/>
-               <label className='already'>Already on LinkedIn?<a href='signinpage'onClick={()=>navigate('/signinpage')} >Sign in</a></label>
+               <label className='already'>Already on LinkedIn?<a href='signinpage'onClick={SignInPage} >Sign in</a></label>
             </div>
         </div>
         </>

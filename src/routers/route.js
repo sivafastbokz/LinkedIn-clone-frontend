@@ -1,6 +1,7 @@
 import React from 'react';
 import SignUpForm from '../container/SignUpForm';
 import SignInForm from '../container/SignInForm';
+import UserFeed from '../container/UserFeed';
 import{BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 function RouteWay(){
@@ -10,6 +11,7 @@ function RouteWay(){
             <Routes>
                 <Route path='/' element={<SignUpForm/>}></Route>
                 <Route path='/signinpage' element={<SignInForm/>}></Route>
+                <Route path='/feed' element={<UserFeed/>}></Route>
             </Routes>
          </Router>
         </>

@@ -27,6 +27,7 @@ body{
 
 .new a{
     text-decoration: none;
+    color: purple;
 }
 
 .signin-btn{

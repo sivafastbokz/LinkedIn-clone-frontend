@@ -22,10 +22,9 @@ body{
     width: 300px;
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 30px;
-    left: 550px;
     border-radius: 5px;
+    margin-left: 560px;
+    margin-top: 25px;
 }
 
 .container-item{
@@ -68,7 +67,9 @@ body{
 
 .already a{
     text-decoration: none;
+    color: purple;
 }
+
 
 .error-msg{
     color: red;
@@ -80,18 +81,16 @@ body{
     margin-left: 50px;
 }
 
-@media only screen and (max-device-width : 425px){
+@media  screen and (max-width : 480px){
     .heading h1{
         display: inline;
         position: relative;
-        left: 50px;
+        left: 30px;
         font-size:large;
     }
 
     .container{
-        position: relative;
-        top: 30px;
-        left: 60px;
+        margin-left: 40px;
     }
 
     .logo{
@@ -101,44 +100,45 @@ body{
     }
 }
 
-@media only screen and (max-device-width : 320px){
-    .heading h1{
-        display: inline;
+
+@media screen  and (width:768px){
+    .heading h1 {
         position: relative;
-        left: 2px;
-        font-size:large;
+        left: 150px;
     }
 
-    .container{
+    .logo{
         position: relative;
-        top: 30px;
         left: 10px;
     }
 
-    .logo{
-        position: relative;
-        top: 0px;
-        left: 20px;
+    .container{
+        margin-left: 250px;
     }
 }
 
-@media only screen and (max-device-width : 375px){
+@media screen and (width:1024px){
     .heading h1{
-        display: inline;
         position: relative;
-        left: 20px;
-        font-size:large;
-    }
-
-    .container{
-        position: relative;
-        top: 30px;
-        left: 30px;
+        left: 250px;
     }
 
     .logo{
         position: relative;
-        top: 0px;
-        left: 0;
+        left: 80px;
+    }
+    .container{
+        margin-left: 380px;
+    }
+}
+
+@media screen  and (width:2560px){
+    .heading h1{
+        position: relative;
+        left: 900px;
+    }
+
+    .container{
+        margin-left: 1050px;
     }
 }

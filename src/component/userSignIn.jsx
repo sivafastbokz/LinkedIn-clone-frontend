@@ -25,6 +25,7 @@ function UserSignIn(){
     try {
         const response = await SignInApi(email,password);
         console.log(response)
+        navigate('/feed')
         const{status,data}=response
         if(status === 200){
             const{status:loginstatus,data:token}=data
@@ -32,6 +33,7 @@ function UserSignIn(){
             if(loginstatus === 'logged in successfully'){
                 localStorage.setItem('token',token)
                 // setSuccess('Sign In Successfull')
+                
             }else{
                 setInvalid('invalid Email or Password')
             }
@@ -40,6 +42,11 @@ function UserSignIn(){
         console.log(error)
         setInvalid('invalid Email or Password')
     }
+   }
+
+   const SignUpPage = (event)=>{
+      event.preventDefault();
+      navigate('/')
    }
 
     return(
@@ -66,7 +73,7 @@ function UserSignIn(){
                <ButtonReUse label='Sign In' className='signin-btn' onClick={SignIn}/>
                {invalid &&  <p className='invalid'>{invalid}</p>}
                <hr className='line'/>
-               <label className='new'>New to LinkedIn?<a href='/'onClick={()=>navigate('/')} >Sign up</a></label>
+               <label className='new'>New to LinkedIn?<a href='/'onClick={SignUpPage} >Sign up</a></label>
              </div>
         </div>
         </>
