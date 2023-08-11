@@ -3,16 +3,16 @@ body{
 }
 
 .logo{
-    display: inline;
-    position: relative;
-    left: 200px;
+    display: flex;
+    margin-left: 200px;
     top: 10px;
 }
 
 .heading h1{
-    display: inline;
-    position: relative;
-    left: 450px;
+    display: flex;
+    justify-content: center;
+    /* position: relative; */
+    margin-left: 30px;
     font-weight: 400;
 }
 
@@ -22,6 +22,9 @@ body{
     width: 300px;
     display: flex;
     justify-content: center;
+    /* align-items: center; */
+    /* flex-wrap: wrap; */ 
+    /* gap:1.5rem; */
     border-radius: 5px;
     margin-left: 560px;
     margin-top: 25px;
@@ -81,30 +84,39 @@ body{
     margin-left: 50px;
 }
 
-@media  screen and (max-width : 480px){
+@media screen and (max-width: 480px) {
+    .heading h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-left: 0;
+      font-size: 17px;
+    }
+  
+    .container {
+      margin: auto;
+      width: 300px;
+    }
+  
+    .logo {
+      display: flex;
+      margin-left: 0;
+    }
+  }
+/*   
+ @media screen and (min-width:481px) {
     .heading h1{
-        display: inline;
-        position: relative;
-        left: 30px;
-        font-size:large;
+
     }
-
-    .container{
-        margin-left: 40px;
-    }
-
-    .logo{
-        position: relative;
-        top: 0px;
-        left: 0;
-    }
-}
+ }  */
 
 
-@media screen  and (width:768px){
+/* @media screen  and (min-width:770px) and (max-width:1445px){
     .heading h1 {
         position: relative;
         left: 150px;
+        display: flex;
     }
 
     .logo{
@@ -114,10 +126,14 @@ body{
 
     .container{
         margin-left: 250px;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
     }
-}
+} */
 
-@media screen and (width:1024px){
+/* @media screen and (width:1024px){
     .heading h1{
         position: relative;
         left: 250px;
@@ -141,4 +157,4 @@ body{
     .container{
         margin-left: 1050px;
     }
-}
+} */
