@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-function ButtonReUse({label,className,onClick}){
+function ButtonReUse({label,className,onClick,tittle}){
     return(
         <React.Fragment>
-         <button className={className} onClick={onClick}>{label}</button>
+         <button className={className} onClick={onClick} title={tittle}>{label}</button>
         </React.Fragment>
     )
 }

@@ -1,0 +1,45 @@
+.header{
+    background-color: white;
+    height: 3.5rem;
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    position: relative;
+}
+
+.input-search{
+    width: 250px;
+    border-radius: 3px;
+    padding: 8px;
+    border: none;
+    background: #eef3f8;
+    position: absolute;
+    top: 12px;
+    left: 250px;
+}
+
+.logo-feed{
+   height: 55px;
+   margin-left: 200px;
+}
+
+.logout-btn{
+   margin-left: 60%;
+   position: absolute;
+   top: 13px;
+   padding: 5px;
+   background: none;
+   border: none;
+   color: #00000099;
+   cursor: pointer;
+}
+
+.logout-btn:hover{
+    color: black;
+}
+
+.search-btn{
+    position: relative;
+    bottom: 15px;
+    left: 5px;
+    color: #00000099;
+}

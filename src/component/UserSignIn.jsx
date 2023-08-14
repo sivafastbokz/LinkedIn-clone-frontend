@@ -4,9 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Logo from '../reUseComponent/Logo';
 import TagReUse from '../reUseComponent/TagReUse';
 import ButtonReUse from '../reUseComponent/ButtonReUse';
-
 import './userSignIn.css'
-
 
 function UserSignIn(){
     const[email,setEmail]=useState('');
@@ -16,7 +14,7 @@ function UserSignIn(){
     const[invalid,setInvalid]=useState('');
     const navigate = useNavigate();
 
-   const SignIn = async(e)=>{
+   const signIn = async(e)=>{
     e.preventDefault();
     if(!email || !password){
         setError('Fill The Required Fields');
@@ -24,19 +22,13 @@ function UserSignIn(){
     }
     try {
         const response = await SignInApi(email,password);
-        console.log(response)
-        navigate('/feed')
         const{status,data}=response
-        if(status === 200){
-            const{status:loginstatus,data:token}=data
-            console.log(data)
-            if(loginstatus === 'logged in successfully'){
-                localStorage.setItem('token',token)
+        if(status === 'logged in successfully'){
+            localStorage.setItem('token',data)
                 // setSuccess('Sign In Successfull')
-                
-            }else{
-                setInvalid('invalid Email or Password')
-            }
+                navigate('/feed')
+        }else{
+            setInvalid('invalid Email or Password')
         }
     } catch (error) {
         console.log(error)
@@ -44,7 +36,7 @@ function UserSignIn(){
     }
    }
 
-   const SignUpPage = (event)=>{
+   const signUpPage = (event)=>{
       event.preventDefault();
       navigate('/')
    }
@@ -70,10 +62,10 @@ function UserSignIn(){
                <br/>
                {error && <p className='error-msg-signin'>{error}</p>}
                {/* {success && <p>{success}</p>} */}
-               <ButtonReUse label='Sign In' className='signin-btn' onClick={SignIn}/>
+               <ButtonReUse label='Sign In' className='signin-btn' onClick={signIn}/>
                {invalid &&  <p className='invalid'>{invalid}</p>}
                <hr className='line'/>
-               <label className='new'>New to LinkedIn?<a href='/'onClick={SignUpPage} >Sign up</a></label>
+               <label className='new'>New to LinkedIn?<a href='/'onClick={signUpPage} >Sign up</a></label>
              </div>
         </div>
         </>

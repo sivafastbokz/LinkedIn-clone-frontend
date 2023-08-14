@@ -1,10 +1,10 @@
 import React from 'react';
 import App from '../icons8-linkedin.svg';
 
-function Logo(){
+function Logo({className}){
     return(
         <React.Fragment>
-        <img src={App} alt='LinkedIn logo'></img>
+        <img src={App} alt='LinkedIn logo'className={className}></img>
         </React.Fragment>
     )
 }

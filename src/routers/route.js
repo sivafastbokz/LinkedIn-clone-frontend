@@ -1,12 +1,11 @@
 import React from 'react';
+import{BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import SignUpForm from '../container/SignUpForm';
 import SignInForm from '../container/SignInForm';
 import UserFeed from '../container/UserFeed';
-import{BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 function RouteWay(){
     return(
-        <>
          <Router>
             <Routes>
                 <Route path='/' element={<SignUpForm/>}></Route>
@@ -14,7 +13,6 @@ function RouteWay(){
                 <Route path='/feed' element={<UserFeed/>}></Route>
             </Routes>
          </Router>
-        </>
     )
 }
 export default RouteWay;

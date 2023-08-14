@@ -1,14 +1,12 @@
 import React from 'react';
-import Logo from '../reUseComponent/Logo';
+import Header from './Header';
 import './feed.css'
 
 
 function Feed(){
     return(
         <>
-        <div className='header'>
-          <Logo/> <input className='input-search' placeholder='search'></input>
-        </div>
+        <Header/>
         </>
     )
 }
