@@ -13,8 +13,8 @@
     border: none;
     background: #eef3f8;
     position: absolute;
-    top: 12px;
-    left: 250px;
+    top: 10px;
+    left: 0px;
 }
 
 .logo-feed{
@@ -23,7 +23,7 @@
 }
 
 .logout-btn{
-   margin-left: 60%;
+   margin-left: 50%;
    position: absolute;
    top: 13px;
    padding: 5px;
@@ -38,8 +38,18 @@
 }
 
 .search-btn{
-    position: relative;
-    bottom: 15px;
-    left: 5px;
+    /* position: absolute; */
+    /* bottom: 15px; */
+    /* top: 15px; */
+    /* left: 250px; */
     color: #00000099;
+    cursor: pointer;
 }
+
+/* .search-container{
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    position: relative;
+    bottom: 58px;
+} */
