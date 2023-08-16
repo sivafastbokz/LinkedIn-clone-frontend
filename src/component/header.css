@@ -13,8 +13,8 @@
     border: none;
     background: #eef3f8;
     position: absolute;
-    top: 10px;
-    left: 0px;
+    top: 12px;
+    left: 250px;
 }
 
 .logo-feed{
@@ -23,9 +23,9 @@
 }
 
 .logout-btn{
-   margin-left: 50%;
+   margin-left: 0;
    position: absolute;
-   top: 13px;
+   top: 148px;
    padding: 5px;
    background: none;
    border: none;
@@ -38,18 +38,96 @@
 }
 
 .search-btn{
-    /* position: absolute; */
-    /* bottom: 15px; */
-    /* top: 15px; */
-    /* left: 250px; */
+    position: absolute; 
+    top: 15px; 
+    left: 250px;
     color: #00000099;
     cursor: pointer;
 }
 
-/* .search-container{
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
-    position: relative;
-    bottom: 58px;
+.profile-btn{
+    margin-left: 55.3%;
+    position: absolute;
+    top: 5px;
+    padding: 5px;
+    background: none;
+    border: none;
+    color: #00000099;
+    cursor: pointer;
+}
+
+/* .profile-btn:hover{
+    color: black;
 } */
+
+.small-text{
+    margin-left: 61em;
+    position: absolute;
+    top: 32px;
+    background: none;
+    border: none;
+    color: #00000099;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.small-text:hover{
+    color: black;
+}
+
+.dropdown{
+    margin-left: 34.8em;
+    position: absolute;
+    top: 29px;
+    background: none;
+    border: none;
+    color: #00000099;
+    cursor: pointer;
+}
+
+.profile-menu{
+    margin-top: 5px;
+    border-top: 2px solid white;
+    background: white;
+    width: 15%;
+    margin-left: 56em;
+    border-radius: 5px;
+    visibility: hidden;
+    height: 130px;
+    /* box-shadow: 15px black; */
+}
+
+.profile-menu.expend{
+    visibility: visible;
+}
+
+.signout-label{
+    margin-left: 30px;
+    margin-top: 0px;
+    color: #00000099;
+    cursor: pointer;
+}
+
+.signout-label:hover{
+    color: black;
+}
+
+.create-btn{
+    position: absolute;
+    top: 11px;
+    left: 65%;
+    color: #00000099;
+    cursor: pointer;
+}
+
+.create-btn:hover{
+    color: black;
+}
+
+.create-label{
+    position: absolute;
+    top: 33px;
+    left:64.4%;
+    color: #00000099;
+    cursor: pointer;
+}
