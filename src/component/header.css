@@ -114,7 +114,7 @@
 
 .create-btn{
     position: absolute;
-    top: 11px;
+    top: 10px;
     left: 65%;
     color: #00000099;
     cursor: pointer;
@@ -126,8 +126,71 @@
 
 .create-label{
     position: absolute;
-    top: 33px;
-    left:64.4%;
+    top: 32px;
+    left:64.1%;
     color: #00000099;
     cursor: pointer;
+    border: none;
+    background: none;
 }
+
+.post-textarea{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 450px;
+    width: 49.8%;
+    margin-left: 400px;
+    position: relative;
+    bottom: 130px;
+    border-radius: 8px;
+    visibility: hidden;
+}
+
+.post-textarea.expand{
+    visibility: visible;
+}
+
+.textarea{
+    position: absolute;
+    top: 100px;
+    font-size: large;
+    font-family: inherit;
+    border: none;
+    resize: none;
+}
+
+.textarea:focus{
+    outline: none;
+}
+
+.close-btn{
+    color: #00000099;
+    cursor: pointer;
+    margin-left: 95%;
+    margin-top: 10px;
+}
+
+.close-btn:hover{
+    color: black;
+}
+
+.post-btn{
+    position: absolute;
+    bottom: 25px;
+    left: 91%;
+    border-radius: 20px;
+    padding: 6px 16px;
+    background-color: #0A66C2;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.line3{
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    color: gainsboro;
+}
+
