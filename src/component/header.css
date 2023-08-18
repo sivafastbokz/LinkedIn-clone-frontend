@@ -15,6 +15,7 @@
     position: absolute;
     top: 12px;
     left: 250px;
+    padding-left: 30px;
 }
 
 .logo-feed{
@@ -61,7 +62,7 @@
 } */
 
 .small-text{
-    margin-left: 61em;
+    margin-left: 60.5em;
     position: absolute;
     top: 32px;
     background: none;
@@ -76,7 +77,7 @@
 }
 
 .dropdown{
-    margin-left: 34.8em;
+    margin-left: 34.5em;
     position: absolute;
     top: 29px;
     background: none;

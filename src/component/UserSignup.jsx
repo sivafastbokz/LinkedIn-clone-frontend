@@ -28,6 +28,7 @@ function UserSignup(){
         }
         try {
             const response = await FormApi(email,firstName,lastName,password);
+            sessionStorage.setItem('name',firstName);
             console.log(response)
             navigate('/signinpage')
         } catch (error) {
