@@ -1,0 +1,28 @@
+.post-field{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 350px;
+    width: 40%;
+    margin-left: 450px;
+    margin-top: 80px;
+    border-radius: 8px;
+    border:2px solid gainsboro ;
+}
+
+.post-content{
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.profile-img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.profile-name{
+    margin-top: -43px;
+    margin-left: 60px;
+    font-size: x-large;
+}
