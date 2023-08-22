@@ -49,7 +49,7 @@
 }
 
 .profile-btn{
-    margin-left: 55%;
+    margin-left: 55.3%;
     position: absolute;
     top: 5px;
     padding: 5px;
@@ -142,7 +142,7 @@
 .post-textarea{
     background: white;
     height: 450px;
-    width: 49.8%;
+    width: 50.4%;
     margin-left: 400px;
     position: relative;
     bottom: 130px;
@@ -167,6 +167,7 @@
     border: none;
     resize: none;
     padding-left: 15px;
+    border-bottom: 1.5px solid gainsboro;
 }
 
 .textarea:focus{
@@ -179,28 +180,32 @@
     position: relative;
     left: 86.5%;
     bottom: 13px;
+    padding: 2px;
 }
 
 .close-btn:hover{
     color: black;
+    background: gainsboro;
+    border-radius: 20px;
+    
 }
 
 .post-btn{
     position: absolute;
-    bottom: 25px;
-    left: 91%;
+    bottom: 15px;
+    left: 90%;
     border-radius: 20px;
-    padding: 6px 16px;
+    padding: 8px 16px;
     background-color: #0A66C2;
     border: none;
     color: white;
     cursor: pointer;
+    font-weight: bolder;
+    font-size: medium;
 }
 
 .line3{
-    position: absolute;
-    bottom: 60px;
-    width: 100%;
-    color: gainsboro;
+    border: 1px solid gainsboro;
+    border-bottom: thin;
 }
 

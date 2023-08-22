@@ -29,18 +29,18 @@ function Feed(){
 
     return(
         <>
-        <Header/>
-        <div className='post-field'>
-            <div className='profile-img'>
-            <ProfileImg/>
-            <TagReUse label={userName} className='profile-name'/>
-            </div>
-         {userPost.map((post)=>(
-             <div className='post-content' key={post._id}>
-              {post.postContent}
-             </div>
-         ))}
-        </div>
+        <Header updatePost={userPosts}/>
+       {userPost.map((post)=>(
+         <div className='post-field' key={post._id}>
+         <div className='profile-img'>
+         <ProfileImg/>
+         <TagReUse label={userName} className='profile-name'/>
+         </div>
+          <div className='post-content'>
+           {post.postContent}
+          </div>
+     </div>
+       ))}
         </>
     )
 }

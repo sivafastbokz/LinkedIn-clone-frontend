@@ -8,7 +8,7 @@ import userPost from '../service/userPostApi';
 import ProfileImg from '../reUseComponent/ProfileImg';
 import './header.css'
 
-function Header(){
+function Header({updatePost}){
     const[showProfileMenu,setShowProfileMenu]=useState(false);
     const[showCreateBox,setShowCreateBox]=useState(false);
     const[post,setPost]=useState('');
@@ -29,6 +29,9 @@ function Header(){
         e.preventDefault();
         try {
             await userPost(post)
+            setShowCreateBox(!showCreateBox)
+            updatePost();
+            setPost('')
         } catch (error) {
             console.log(error)
         }
@@ -51,7 +54,7 @@ function Header(){
         <div className={showProfileMenu ? 'profile-menu expend' : 'profile-menu'}>
             <ProfileImg className='profile-img' />
             <TagReUse label={userName} className='profile-menu-h1'/>
-            <hr/>
+            <hr className='line3'/>
             <Logout className='logout-btn' onClick={logOut} titleAccess='SignOut'/><label onClick={logOut} className='signout-label'>SignOut</label>
         </div>
         <AddCircle className='create-btn' onClick={()=>{setShowCreateBox(!showCreateBox)}}/>
@@ -60,8 +63,7 @@ function Header(){
                <ProfileImg className='profile-img'/>
                <Close className='close-btn' onClick={clearAndClosePost}/>
                <TagReUse label={userName} className='post-textarea-h1'/>
-               <textarea  className='textarea' rows='13' cols='62' value={post} placeholder='What do you want to talk about?' onChange={(event)=>setPost(event.target.value)}></textarea>
-               <hr className='line3'/>
+               <textarea  className='textarea' rows='15' cols='63' value={post} placeholder='What do you want to talk about?' onChange={(event)=>setPost(event.target.value)}></textarea>
                <ButtonReUse className='post-btn' label='Post' onClick={createPost}/>
         </div>
         </div>

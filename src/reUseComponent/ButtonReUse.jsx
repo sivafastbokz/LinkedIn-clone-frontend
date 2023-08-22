@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function ButtonReUse({label,className,onClick,tittle}){
     return(
         <React.Fragment>
