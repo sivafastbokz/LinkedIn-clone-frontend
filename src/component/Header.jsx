@@ -6,11 +6,13 @@ import ButtonReUse from '../reUseComponent/ButtonReUse';
 import TagReUse from '../reUseComponent/TagReUse';
 import userPost from '../service/userPostApi';
 import ProfileImg from '../reUseComponent/ProfileImg';
+import SuccessMsg from '../reUseComponent/SuccessMsg';
 import './header.css'
 
 function Header({updatePost}){
     const[showProfileMenu,setShowProfileMenu]=useState(false);
     const[showCreateBox,setShowCreateBox]=useState(false);
+    const[successMsg,setSuccessMsg]=useState(false);
     const[post,setPost]=useState('');
     const[userName,setUserName]=useState('');
     const navigate = useNavigate();
@@ -29,9 +31,13 @@ function Header({updatePost}){
         e.preventDefault();
         try {
             await userPost(post)
-            setShowCreateBox(!showCreateBox)
             updatePost();
             setPost('')
+            setSuccessMsg(true)
+            setTimeout(()=>{
+                setSuccessMsg(false)
+            },2000)
+            setShowCreateBox(!showCreateBox)
         } catch (error) {
             console.log(error)
         }
@@ -64,8 +70,9 @@ function Header({updatePost}){
                <Close className='close-btn' onClick={clearAndClosePost}/>
                <TagReUse label={userName} className='post-textarea-h1'/>
                <textarea  className='textarea' rows='15' cols='63' value={post} placeholder='What do you want to talk about?' onChange={(event)=>setPost(event.target.value)}></textarea>
-               <ButtonReUse className='post-btn' label='Post' onClick={createPost}/>
+               <ButtonReUse className={post === '' ? 'post-btn disabled' : 'post-btn'} label='Post' disabled={post === ''} onClick={createPost}/>
         </div>
+        <SuccessMsg className={successMsg ? 'success-msg show' : 'success-msg'} label='Successfully posted!'/>
         </div>
         </>
     )

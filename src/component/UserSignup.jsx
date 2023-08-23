@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FormApi from '../service/formApi';
 import Logo from '../reUseComponent/Logo';
 import ButtonReUse from '../reUseComponent/ButtonReUse';
 import TagReUse from '../reUseComponent/TagReUse';
-import { useNavigate } from 'react-router-dom';
+import SuccessMsg from '../reUseComponent/SuccessMsg';
 import './userSignup.css'
 
 function UserSignup(){
@@ -13,7 +14,8 @@ function UserSignup(){
     const[password,setPassword]=useState('');
     const[error,setError]=useState('');
     const[emailError,setEmailError]=useState('');
-
+    const[successMsg,setSuccessMsg]=useState(false);
+    
     const navigate = useNavigate();
 
     const Register = async(e)=>{
@@ -27,10 +29,12 @@ function UserSignup(){
             return;
         }
         try {
-            const response = await FormApi(email,firstName,lastName,password);
+            await FormApi(email,firstName,lastName,password);
             localStorage.setItem('name',firstName)
-            console.log(response)
-            navigate('/signinpage')
+            setSuccessMsg(!successMsg)
+            setTimeout(()=>{
+                navigate('/signinpage')
+            },1000)  
         } catch (error) {
             console.log(error)
         }
@@ -73,6 +77,7 @@ function UserSignup(){
                <label className='already'>Already on LinkedIn?<a href='signinpage'onClick={SignInPage} >Sign in</a></label>
             </div>
         </div>
+        <SuccessMsg label='Account Successfully Created!' className={successMsg ? 'signup-success-msg show' : 'signup-success-msg'}/>
         </>
     )
 }

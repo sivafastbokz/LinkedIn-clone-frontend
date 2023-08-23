@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import SignInApi from '../service/signInApi';
 import { useNavigate } from 'react-router-dom';
+import SignInApi from '../service/signInApi';
 import Logo from '../reUseComponent/Logo';
 import TagReUse from '../reUseComponent/TagReUse';
 import ButtonReUse from '../reUseComponent/ButtonReUse';
+import SuccessMsg from '../reUseComponent/SuccessMsg';
 import './userSignIn.css'
 
 function UserSignIn(){
     const[email,setEmail]=useState('');
     const[password,setPassword]=useState('');
     const[error,setError]=useState('');
-    // const[success,setSuccess]=useState('');
+    const[successMsg,setSuccessMsg]=useState(false);
     const[invalid,setInvalid]=useState('');
     const navigate = useNavigate();
 
@@ -25,8 +26,10 @@ function UserSignIn(){
         const{status,data}=response
         if(status === 'logged in successfully'){
             localStorage.setItem('token',data)
-                // setSuccess('Sign In Successfull')
+            setSuccessMsg(!successMsg)
+            setTimeout(()=>{
                 navigate('/feed')
+            },1000) 
         }else{
             setInvalid('invalid Email or Password')
         }
@@ -61,13 +64,13 @@ function UserSignIn(){
                <input type='password' className='input-box1' onChange={(event)=>setPassword(event.target.value)}></input>
                <br/>
                {error && <p className='error-msg-signin'>{error}</p>}
-               {/* {success && <p>{success}</p>} */}
                <ButtonReUse label='Sign In' className='signin-btn' onClick={signIn}/>
                {invalid &&  <p className='invalid'>{invalid}</p>}
                <hr className='line'/>
                <label className='new'>New to LinkedIn?<a href='/'onClick={signUpPage} >Sign up</a></label>
              </div>
         </div>
+        <SuccessMsg label='Login Successfull!' className={successMsg ? 'signin-success-msg show' : 'signin-success-msg'}/>
         </>
     )
 }

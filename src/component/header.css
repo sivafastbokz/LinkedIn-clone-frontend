@@ -49,7 +49,7 @@
 }
 
 .profile-btn{
-    margin-left: 55.3%;
+    margin-left: 55.2%;
     position: absolute;
     top: 5px;
     padding: 5px;
@@ -204,8 +204,38 @@
     font-size: medium;
 }
 
+.post-btn.disabled{
+    color: #0000004d;
+    background-color: gainsboro;
+    cursor: not-allowed;
+}
+
 .line3{
     border: 1px solid gainsboro;
     border-bottom: thin;
+}
+
+.success-msg{
+    position: relative;
+    bottom: 700px;
+    left: 45%;
+    background: green;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    opacity: 0;
+    transform: translateY(-100%); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.success-msg.show{
+    bottom: 640px;
+    opacity: 1;
+    transform: translateY(0); 
 }
 

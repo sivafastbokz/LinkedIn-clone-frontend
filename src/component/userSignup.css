@@ -80,6 +80,30 @@ body{
     margin-left: 50px;
 }
 
+.signup-success-msg{
+    position: relative;
+    bottom: 500px;
+    left: 41.5%;
+    background: green;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    opacity: 0;
+    transform: translateY(-100%); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.signup-success-msg.show{
+    bottom: 460px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media screen and (max-width: 480px) {
     .heading h1 {
       display: flex;
