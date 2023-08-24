@@ -34,7 +34,7 @@ function UserSignup(){
             setSuccessMsg(!successMsg)
             setTimeout(()=>{
                 navigate('/signinpage')
-            },1000)  
+            },1000)   
         } catch (error) {
             console.log(error)
         }

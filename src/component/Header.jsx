@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Logout,Search,AccountCircle,ArrowDropDown,AddCircle,Close} from '@mui/icons-material';
+import { Search,AccountCircle,ArrowDropDown,AddCircle,Close} from '@mui/icons-material';
 import Logo from '../reUseComponent/Logo';
 import ButtonReUse from '../reUseComponent/ButtonReUse';
 import TagReUse from '../reUseComponent/TagReUse';
@@ -61,7 +61,7 @@ function Header({updatePost}){
             <ProfileImg className='profile-img' />
             <TagReUse label={userName} className='profile-menu-h1'/>
             <hr className='line3'/>
-            <Logout className='logout-btn' onClick={logOut} titleAccess='SignOut'/><label onClick={logOut} className='signout-label'>SignOut</label>
+            <label onClick={logOut} className='signout-label'>SignOut</label>
         </div>
         <AddCircle className='create-btn' onClick={()=>{setShowCreateBox(!showCreateBox)}}/>
         <ButtonReUse className='create-label' onClick={()=>{setShowCreateBox(!showCreateBox)}} label='Create'/>

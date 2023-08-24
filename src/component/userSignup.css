@@ -81,9 +81,10 @@ body{
 }
 
 .signup-success-msg{
-    position: relative;
-    bottom: 500px;
-    left: 41.5%;
+    position: fixed;
+    top: 6.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: green;
     width: 250px;
     height: 50px;
@@ -94,14 +95,13 @@ body{
     border: none;
     color: white;
     opacity: 0;
-    transform: translateY(-100%); 
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .signup-success-msg.show{
-    bottom: 460px;
     opacity: 1;
-    transform: translateY(0);
+    top: 35px;
+    margin-left: 15px;
 }
 
 @media screen and (max-width: 480px) {
@@ -123,8 +123,31 @@ body{
       display: flex;
       margin-left: 0;
     }
+
+    .signup-success-msg{
+        position: fixed;
+        top: 6.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: green;
+        width: 250px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        border: none;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .signup-success-msg.show{
+        opacity: 1;
+        top: 35px;
+    }
   }
-  
+
  @media screen and (min-width:481px) and (max-width:880px){
     .heading h1{
         display: flex;

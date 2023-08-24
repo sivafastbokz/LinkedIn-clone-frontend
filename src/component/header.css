@@ -25,21 +25,6 @@
    margin-left: 200px;
 }
 
-.logout-btn{
-   margin-left: 0;
-   position: absolute;
-   top: 148px;
-   padding: 5px;
-   background: none;
-   border: none;
-   color: #00000099;
-   cursor: pointer;
-}
-
-.logout-btn:hover{
-    color: black;
-}
-
 .search-btn{
     position: absolute; 
     top: 15px; 
@@ -92,7 +77,7 @@
     margin-left: 56em;
     border-radius: 5px;
     visibility: hidden;
-    height: 130px;
+    height: 110px;
 }
 
 .profile-menu.expend{
@@ -100,21 +85,21 @@
 }
 
 .profile-menu-h1{
-    margin-top: -48px;
-    margin-left: 65px;
-    font-weight: 500;
+   margin-top: -50px;
+   margin-left: 65px;
+   font-weight: 500;
+   font-size: x-large;
 }
 
 .signout-label{
     color: #00000099;
     cursor: pointer;
     position: relative;
-    left: 35px;
-    top: 10px;
+    left: 15px;
 }
 
 .signout-label:hover{
-    color: black;
+    text-decoration: underline;
 }
 
 .create-btn{
@@ -213,6 +198,7 @@
 .line3{
     border: 1px solid gainsboro;
     border-bottom: thin;
+    margin-top: 30px;
 }
 
 .success-msg{
