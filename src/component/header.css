@@ -3,7 +3,7 @@
     height: 3.5rem;
     width: 100%;
     border-bottom: 1px solid gainsboro;
-    position: relative;
+    /* position: relative; */
     position: fixed;
     top: 0;
 }
@@ -34,7 +34,7 @@
 }
 
 .profile-btn{
-    margin-left: 55.2%;
+    margin-left: 53%;
     position: absolute;
     top: 5px;
     padding: 5px;
@@ -45,7 +45,7 @@
 }
 
 .small-text{
-    margin-left: 60.5em;
+    margin-left: 58.5em;
     position: absolute;
     top: 32px;
     background: none;
@@ -60,7 +60,7 @@
 }
 
 .dropdown{
-    margin-left: 34.5em;
+    margin-left: 33.4em;
     position: absolute;
     top: 29px;
     background: none;
@@ -74,7 +74,7 @@
     border-top: 2px solid white;
     background: white;
     width: 15%;
-    margin-left: 56em;
+    margin-left: 53em;
     border-radius: 5px;
     visibility: hidden;
     height: 110px;
@@ -126,11 +126,11 @@
 
 .post-textarea{
     background: white;
-    height: 450px;
-    width: 50.4%;
-    margin-left: 400px;
+    height: 470px;
+    max-width: 50.4%;
+    margin-left: 330px;
     position: relative;
-    bottom: 130px;
+    bottom: 165px;
     border-radius: 8px;
     visibility: hidden;
 }
@@ -152,7 +152,7 @@
     border: none;
     resize: none;
     padding-left: 15px;
-    border-bottom: 1.5px solid gainsboro;
+    max-width: 100%;
 }
 
 .textarea:focus{
@@ -201,12 +201,20 @@
     margin-top: 30px;
 }
 
-.success-msg{
+.line4{
     position: relative;
-    bottom: 700px;
-    left: 45%;
+    top: 340px;
+    border: 1px solid gainsboro;
+    border-bottom: thin;
+}
+
+.success-msg{
+    position: fixed;
+    top: 6.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: green;
-    width: 200px;
+    width: 250px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -215,13 +223,173 @@
     border: none;
     color: white;
     opacity: 0;
-    transform: translateY(-100%); 
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .success-msg.show{
-    bottom: 640px;
     opacity: 1;
-    transform: translateY(0); 
+    top: 35px;
+    margin-left: 15px;
 }
 
+.input-search.show{
+    display: block;
+}
+
+.menu-bar{
+    margin-left: 60%;
+    margin-bottom: 10px;
+    color: #00000099;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.menu-bar:hover{
+    color: black;
+}
+
+.menu-bar-items{
+    background-color: white;
+    border:1px solid gainsboro;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    gap: 15px;
+    margin-left: 72%;
+    position: relative;
+    bottom: 110px;
+    cursor: pointer;
+    height: 60px;
+    visibility: hidden;
+}
+
+.menu-bar-items.show{
+    visibility: visible;
+}
+
+.profile-btn1{
+    padding: 5px; 
+    background: none; 
+    border: none;
+    color: #00000099;
+}
+
+.create-btn1{
+    padding: 5px; 
+    background: none; 
+    border: none;
+    color: #00000099;
+}
+
+.mobile-create-label{
+    font-size: small;
+    top: 28px;
+    position: absolute;
+    color: #00000099;
+    left: 8px;
+}
+
+.mobile-profile-label{
+    font-size: small;
+    top: 28px;
+    position: absolute;
+    color: #00000099;
+    left: 66px;
+}
+
+@media screen and (max-width:480px) {
+    .header{
+        position: fixed;
+        top: 0;
+    }
+
+    .logo-feed{
+        margin-left: 10px;
+    }
+
+    .input-search{
+       position: absolute;
+       left: 60px;
+       width: 150px;
+       display: none;
+    }
+
+    .search-btn{
+        position: absolute;
+        left: 60px;
+    }
+
+    .menu-bar{
+        visibility: visible;
+        margin-left: 68%;
+        margin-bottom: 10px;
+    }
+
+    .small-text{
+        display: none;
+    }
+
+    .dropdown{
+        display: none;
+    }
+
+    .create-label{
+        display: none;
+    }
+
+    .create-btn{
+        top: 15px;
+        visibility: hidden;
+    }
+
+    .profile-btn{
+        top: 10px;
+        left: 21%;
+        visibility: hidden;
+    }
+
+    .menu-bar-items{
+        margin-left: 65%;
+    }
+
+    .post-textarea{
+       margin-left: 10px;
+       margin-left: 10px;
+       margin-top: 60px;
+       max-width: 93%;
+       height: 350px;
+    }
+
+    .close-btn{
+        position: relative;
+        left: 70%;
+    }
+
+    .textarea{
+        height: 200px;
+        max-width: 94%;
+    }
+
+    .post-btn{
+        position: absolute;
+        left: 75%;
+    }
+
+    .line4{
+        position: relative;
+        top: 220px;
+    }
+
+    .profile-menu{
+        margin-left: 10px;
+        width: 45%;
+        position: relative;
+        top: 80px;
+        left: 155px;
+    }
+
+    /* .success-msg{
+
+    } */
+}

@@ -3,7 +3,7 @@
     flex-direction: column;
     background: white;
     max-height: 200px;
-    width: 40%;
+    max-width: 40%;
     margin-left: 450px;
     margin-top: 80px;
     border-radius: 8px;
@@ -39,4 +39,15 @@
     margin-top: 80px;
     border-radius: 8px;
     border:2px solid gainsboro;
+}
+ 
+@media screen and (max-width:480px) {
+    .post-field{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        max-width: 100%;
+        margin-right: 10px;
+        max-height: fit-content;
+    }
 }
