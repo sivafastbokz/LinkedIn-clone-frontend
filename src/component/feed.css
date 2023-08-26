@@ -51,3 +51,18 @@
         max-height: fit-content;
     }
 }
+
+@media screen and (min-width:481px) and (max-width:880px){
+    .post-field{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+        max-height: -moz-fit-content;
+        max-height: fit-content;
+        max-width: 80%;
+        margin: auto;
+        margin-top: 70px;
+        margin-bottom: -60px;
+    }
+}

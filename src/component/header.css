@@ -45,7 +45,7 @@
 }
 
 .small-text{
-    margin-left: 58.5em;
+    left: 69.5%;
     position: absolute;
     top: 32px;
     background: none;
@@ -60,7 +60,7 @@
 }
 
 .dropdown{
-    margin-left: 33.4em;
+    left: 70.8%;
     position: absolute;
     top: 29px;
     background: none;
@@ -311,7 +311,7 @@
     .input-search{
        position: absolute;
        left: 60px;
-       width: 150px;
+       width: auto;
        display: none;
     }
 
@@ -331,7 +331,8 @@
     }
 
     .dropdown{
-        display: none;
+        /* display: none; */
+        visibility: hidden;
     }
 
     .create-label{
@@ -389,7 +390,84 @@
         left: 155px;
     }
 
-    /* .success-msg{
+    .success-msg{
+      top: -30px;
+    }
 
-    } */
+    .success-msg.show{
+        top: 30px;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:880px){
+    .logo-feed{
+        margin-left: 10px;
+    }
+
+    .input-search{
+        position: absolute;
+        left: 60px;
+        width: auto;
+     }
+
+    .search-btn{
+        position: absolute;
+        left: 60px;
+    }
+
+    .create-btn{
+        left: 75%;
+    }
+
+    .create-label{
+        left: 72.5%;
+    }
+
+    .profile-btn{
+        margin-left: 75%;
+    }
+
+    .small-text{
+        left: 86%;
+    }
+
+    .dropdown{
+        left: 90%;
+    }
+
+    .post-textarea{
+        margin-left: 50px;
+        max-width: 80%;
+        height: 430px;
+    }
+
+    .close-btn{
+        position: relative;
+        left: 76%;
+    }
+
+    .textarea{
+        height: 288px;
+        max-width: 95%;
+    }
+
+    .post-btn{
+        position: absolute;
+        left: 80%;
+    }
+
+    .line4{
+        position: relative;
+        top: 300px;
+    }
+
+    .profile-menu{
+        margin-left: 10px;
+        width: 45%;
+        position: relative;
+        top: 0;
+        left: 225px;
+    }
+
+    
 }
