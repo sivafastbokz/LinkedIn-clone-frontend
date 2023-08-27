@@ -58,9 +58,36 @@
         flex-direction: column;
         margin-left: 10px;
         margin-right: 10px;
-        max-height: -moz-fit-content;
         max-height: fit-content;
         max-width: 80%;
+        margin: auto;
+        margin-top: 70px;
+        margin-bottom: -60px;
+    }
+}
+
+@media screen and (min-width:881px) and (max-width:1436px){
+    .post-field{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+        max-height: fit-content;
+        max-width: 60%;
+        margin: auto;
+        margin-top: 70px;
+        margin-bottom: -60px;
+    }
+}
+
+@media screen and (min-width:1441px) and (max-width:2560px){
+    .post-field{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+        max-height: fit-content;
+        max-width: 40%;
         margin: auto;
         margin-top: 70px;
         margin-bottom: -60px;
