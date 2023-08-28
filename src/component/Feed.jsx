@@ -3,6 +3,7 @@ import Header from './Header';
 import ProfileImg from '../reUseComponent/ProfileImg';
 import TagReUse from '../reUseComponent/TagReUse';
 import userPostGetApi from '../service/userGetPostApi';
+import DefaultPost from './DefaultPost';
 import './feed.css'
 
 function Feed(){
@@ -17,7 +18,6 @@ function Feed(){
         try {
             const response = await userPostGetApi()
             setUserPost(response)
-            console.log(response)
         } catch (error) {
             console.log(error)
         }
@@ -41,6 +41,7 @@ function Feed(){
           </div>
      </div>
        ))}
+    <DefaultPost/>
         </>
     )
 }

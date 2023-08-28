@@ -56,9 +56,11 @@ function Header({updatePost}){
         <Logo className='logo-feed'/> 
         <input className={showSearchBox ? 'input-search show':'input-search'} placeholder='Search' type='text'></input>
         <Search className='search-btn'onClick={()=>{setShowSearchBox(!showSearchBox)}}/>
+        <div className='profile-items'>
         <AccountCircle className='profile-btn' fontSize='medium' onClick={()=>{setShowProfileMenu(!showProfileMenu)}}/>
         <ButtonReUse className='small-text' onClick={()=>{setShowProfileMenu(!showProfileMenu)}} label='Me'/>
         <ArrowDropDown  className='dropdown'onClick={()=>{setShowProfileMenu(!showProfileMenu)}} />
+        </div>
         <Menu className='menu-bar' fontSize='large' onClick={()=>{setShowMenu(!showMenu)}}/>
         <div className={showProfileMenu ? 'profile-menu expend' : 'profile-menu'}>
             <ProfileImg className='profile-img' />
@@ -66,8 +68,10 @@ function Header({updatePost}){
             <hr className='line3'/>
             <label onClick={logOut} className='signout-label'>SignOut</label>
         </div>
+        <div className='create-items'>
         <AddCircle className='create-btn' onClick={()=>{setShowCreateBox(!showCreateBox)}}/>
-        <ButtonReUse className='create-label' onClick={()=>{setShowCreateBox(!showCreateBox)}} label='Create'/>
+        <ButtonReUse className='create-label' onClick={()=>{setShowCreateBox(!showCreateBox)}} label='Create'/> 
+        </div>
         <div className={showMenu ? 'menu-bar-items show' : 'menu-bar-items'}>
         <AddCircle className='create-btn1' onClick={()=>{setShowCreateBox(!showCreateBox)}}/>
         <label className='mobile-create-label'>Create</label>
