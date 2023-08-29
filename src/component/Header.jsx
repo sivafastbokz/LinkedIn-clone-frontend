@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search,AccountCircle,ArrowDropDown,AddCircle,Close,Menu} from '@mui/icons-material';
 import Logo from '../reUseComponent/Logo';
@@ -7,9 +7,10 @@ import TagReUse from '../reUseComponent/TagReUse';
 import userPost from '../service/userPostApi';
 import ProfileImg from '../reUseComponent/ProfileImg';
 import SuccessMsg from '../reUseComponent/SuccessMsg';
+import searchPost from '../service/searchPost';
 import './header.css'
 
-function Header({updatePost}){
+function Header({updatePost,postSearch}){
     const[showProfileMenu,setShowProfileMenu]=useState(false);
     const[showCreateBox,setShowCreateBox]=useState(false);
     const[successMsg,setSuccessMsg]=useState(false);
@@ -17,6 +18,7 @@ function Header({updatePost}){
     const[showMenu,setShowMenu]=useState(false);
     const[post,setPost]=useState('');
     const[userName,setUserName]=useState('');
+    const[search,setSearch]=useState('');
     const navigate = useNavigate();
 
     const logOut =()=>{
@@ -29,32 +31,58 @@ function Header({updatePost}){
         setPost('')
     }
 
+    const addCircleBtn = ()=>{
+        const token = localStorage.getItem('token')
+        if(token === null){
+         navigate('/')
+         return
+        }
+        setShowCreateBox(!showCreateBox)  
+    }
+
     const createPost = async(e)=>{
         e.preventDefault();
         try {
             await userPost(post)
             updatePost();
             setPost('')
+            setShowCreateBox(!showCreateBox)
             setSuccessMsg(true)
             setTimeout(()=>{
                 setSuccessMsg(false)
             },2000)
-            setShowCreateBox(!showCreateBox)
         } catch (error) {
             console.log(error)
         }
     }
 
-      useState(()=>{
+    const searchUserPost = async()=>{
+        if(search === ''){
+            updatePost()
+        }else{
+            try {
+                const response = await searchPost(search)
+                postSearch(response)
+            } catch (error) {
+               console.log(error)
+            }
+        }
+    }
+      
+      useEffect(()=>{
+        searchUserPost();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+      },[search])
+
+      useEffect(()=>{
         setUserName(localStorage.getItem('name'))
       },[])
-  
-   
+
     return(
         <>
         <div className='header'>
         <Logo className='logo-feed'/> 
-        <input className={showSearchBox ? 'input-search show':'input-search'} placeholder='Search' type='text'></input>
+        <input className={showSearchBox ? 'input-search show':'input-search'} placeholder='Search' type='text' value={search} onChange={(event)=>setSearch(event.target.value)}></input>
         <Search className='search-btn'onClick={()=>{setShowSearchBox(!showSearchBox)}}/>
         <div className='profile-items'>
         <AccountCircle className='profile-btn' fontSize='medium' onClick={()=>{setShowProfileMenu(!showProfileMenu)}}/>
@@ -69,11 +97,11 @@ function Header({updatePost}){
             <label onClick={logOut} className='signout-label'>SignOut</label>
         </div>
         <div className='create-items'>
-        <AddCircle className='create-btn' onClick={()=>{setShowCreateBox(!showCreateBox)}}/>
-        <ButtonReUse className='create-label' onClick={()=>{setShowCreateBox(!showCreateBox)}} label='Create'/> 
+        <AddCircle className='create-btn' onClick={addCircleBtn}/>
+        <ButtonReUse className='create-label' onClick={addCircleBtn} label='Create'/> 
         </div>
         <div className={showMenu ? 'menu-bar-items show' : 'menu-bar-items'}>
-        <AddCircle className='create-btn1' onClick={()=>{setShowCreateBox(!showCreateBox)}}/>
+        <AddCircle className='create-btn1' onClick={addCircleBtn}/>
         <label className='mobile-create-label'>Create</label>
         <AccountCircle className='profile-btn1' fontSize='medium' onClick={()=>{setShowProfileMenu(!showProfileMenu)}}/>
         <label className='mobile-profile-label'>Me</label>

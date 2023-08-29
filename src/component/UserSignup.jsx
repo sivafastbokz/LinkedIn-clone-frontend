@@ -74,7 +74,7 @@ function UserSignup(){
                {error &&<p className='error-msg'>{error}</p>}
                <ButtonReUse label='Register' className='register-btn'  onClick={Register}/>
                <hr className='line'/>
-               <label className='already'>Already on LinkedIn?<a href='signinpage'onClick={SignInPage} >Sign in</a></label>
+               <label className='already'>Already on LinkedIn?<a href='signinpage'onClick={SignInPage}>Sign in</a></label>
             </div>
         </div>
         <SuccessMsg label='Account Successfully Created!' className={successMsg ? 'signup-success-msg show' : 'signup-success-msg'}/>
