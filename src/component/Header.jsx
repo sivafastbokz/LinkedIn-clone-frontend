@@ -1,6 +1,7 @@
 import React, {useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search,AccountCircle,ArrowDropDown,AddCircle,Close,Menu} from '@mui/icons-material';
+import jwtDecode from 'jwt-decode';
 import Logo from '../reUseComponent/Logo';
 import ButtonReUse from '../reUseComponent/ButtonReUse';
 import TagReUse from '../reUseComponent/TagReUse';
@@ -75,7 +76,10 @@ function Header({updatePost,postSearch}){
       },[search])
 
       useEffect(()=>{
-        setUserName(localStorage.getItem('name'))
+      const token = localStorage.getItem('token')
+      const tokenDecode = jwtDecode(token)
+      const accName = tokenDecode.userName
+      setUserName(accName)
       },[])
 
     return(

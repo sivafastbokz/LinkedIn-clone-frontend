@@ -1,4 +1,4 @@
-import axiosClient from "../helper/axiosClient";
+import axiosClient from '../helper/axiosClient';
 
 const userPost =async(postContent)=>{
        const token = localStorage.getItem('token')

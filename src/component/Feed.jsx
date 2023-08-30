@@ -7,12 +7,10 @@ import DefaultPost from './DefaultPost';
 import './feed.css'
 
 function Feed(){
-    const[userName,setUserName]=useState('');
     const[userPost,setUserPost]=useState([]);
     const[userLoggedIn,setUserLoggedIn]=useState(false);
 
     useEffect(()=>{
-        setUserName(localStorage.getItem('name'))
         setUserLoggedIn(!!localStorage.getItem('token'))
     },[])
      
@@ -37,7 +35,7 @@ function Feed(){
         <div className='post-field' key={post._id}>
         <div className='profile-img'>
         <ProfileImg/>
-        <TagReUse label={userName} className='profile-name'/>
+        <TagReUse label={post.userName} className='profile-name'/>
         </div>
         <div className='post-content'>
         {post.postContent}

@@ -30,7 +30,6 @@ function UserSignup(){
         }
         try {
             await FormApi(email,firstName,lastName,password);
-            localStorage.setItem('name',firstName)
             setSuccessMsg(!successMsg)
             setTimeout(()=>{
                 navigate('/signinpage')
