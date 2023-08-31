@@ -15,17 +15,21 @@ function Feed(){
     },[])
      
     const userPosts = async()=>{
-        try {
-            const response = await userPostGetApi()
-            setUserPost(response)
-        } catch (error) {
-            console.log(error)
+        const token = localStorage.getItem('token')
+        if(token === null){
+            return;
         }
+            try {
+                const response = await userPostGetApi()
+                setUserPost(response)
+            } catch (error) {
+                console.log(error)
+            }
     }
 
-    useEffect(()=>{
-         userPosts()
-    },[])
+    useEffect(() => {
+         userPosts();
+    }, []);
 
     return(
         <>

@@ -41,6 +41,23 @@ function Header({updatePost,postSearch}){
         setShowCreateBox(!showCreateBox)  
     }
 
+    const profileBtn = ()=>{
+        const token = localStorage.getItem('token')
+        if(token === null){
+         navigate('/')
+         return
+        }
+        setShowProfileMenu(!showProfileMenu)
+    }
+
+    const searchInput = ()=>{
+        const token = localStorage.getItem('token')
+        if(token === null){
+         navigate('/')
+         return
+        }
+    }
+
     const createPost = async(e)=>{
         e.preventDefault();
         try {
@@ -76,22 +93,25 @@ function Header({updatePost,postSearch}){
       },[search])
 
       useEffect(()=>{
-      const token = localStorage.getItem('token')
-      const tokenDecode = jwtDecode(token)
-      const accName = tokenDecode.userName
-      setUserName(accName)
+            const token = localStorage.getItem('token');
+            if (token === null) {
+                return;
+            } 
+                const tokenDecode = jwtDecode(token);
+                const accName = tokenDecode.userName;
+                setUserName(accName);
       },[])
 
     return(
         <>
         <div className='header'>
         <Logo className='logo-feed'/> 
-        <input className={showSearchBox ? 'input-search show':'input-search'} placeholder='Search' type='text' value={search} onChange={(event)=>setSearch(event.target.value)}></input>
+        <input className={showSearchBox ? 'input-search show':'input-search'} placeholder='Search' type='text' value={search} onChange={(event)=>setSearch(event.target.value)} onClick={searchInput}></input>
         <Search className='search-btn'onClick={()=>{setShowSearchBox(!showSearchBox)}}/>
         <div className='profile-items'>
-        <AccountCircle className='profile-btn' fontSize='medium' onClick={()=>{setShowProfileMenu(!showProfileMenu)}}/>
-        <ButtonReUse className='small-text' onClick={()=>{setShowProfileMenu(!showProfileMenu)}} label='Me'/>
-        <ArrowDropDown  className='dropdown'onClick={()=>{setShowProfileMenu(!showProfileMenu)}} />
+        <AccountCircle className='profile-btn' fontSize='medium' onClick={profileBtn}/>
+        <ButtonReUse className='small-text' onClick={profileBtn} label='Me'/>
+        <ArrowDropDown  className='dropdown'onClick={profileBtn} />
         </div>
         <Menu className='menu-bar' fontSize='large' onClick={()=>{setShowMenu(!showMenu)}}/>
         <div className={showProfileMenu ? 'profile-menu expend' : 'profile-menu'}>
