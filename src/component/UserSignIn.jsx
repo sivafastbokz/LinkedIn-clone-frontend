@@ -20,12 +20,10 @@ function UserSignIn(){
     if(!email || !password){
         setError('Fill The Required Fields');
         return;
-    }alert(email,password)
+    }
     try {
         const response = await SignInApi(email,password);
         const{status,data}=response
-        alert('logged in successfully')
-        console.log(status)
         if(status === 'logged in successfully'){
             localStorage.setItem('token',data)
             setSuccessMsg(!successMsg)
@@ -37,7 +35,6 @@ function UserSignIn(){
         }
     } catch (error) {
         console.log(error)
-        alert(error)
         setInvalid('invalid Email or Password')
     }
    }
