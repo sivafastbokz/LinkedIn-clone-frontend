@@ -24,6 +24,8 @@ function UserSignIn(){
     try {
         const response = await SignInApi(email,password);
         const{status,data}=response
+        alert('logged in successfully')
+        console.log(status)
         if(status === 'logged in successfully'){
             localStorage.setItem('token',data)
             setSuccessMsg(!successMsg)
